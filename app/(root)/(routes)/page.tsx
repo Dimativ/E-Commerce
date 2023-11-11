@@ -13,11 +13,7 @@ const SetupPage = () => {
         }
     }, [isOpen, onOpen]);
 
-    return (
-        <div className="p-4">
-            Root page
-        </div>
-    )
+    return null; // return just for trigger the modal, due to this we don't have any exist markup
 }
 
 export default SetupPage;
