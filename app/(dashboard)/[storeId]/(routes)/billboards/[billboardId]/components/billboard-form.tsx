@@ -7,7 +7,7 @@ import {useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
 import toast from "react-hot-toast";
 import axios from "axios";
-import {redirect, useParams, useRouter} from "next/navigation";
+import { useParams, useRouter} from "next/navigation";
 
 import {Billboard} from "@prisma/client";
 import {Heading} from "@/components/ui/heading";
@@ -16,7 +16,6 @@ import {Separator} from "@/components/ui/separator";
 import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from "@/components/ui/form";
 import {Input} from "@/components/ui/input";
 import {AlertModal} from "@/components/modals/alert-modal";
-import {useOrigin} from "@/hooks/use-origin";
 import ImageUpload from "@/components/ui/image-upload";
 
 interface BillboardFormProps {
@@ -32,7 +31,6 @@ type BillboardFormValues = z.infer<typeof formSchema>;
 
 export const BillboardForm: React.FC<BillboardFormProps> = ({initialData}) => {
 
-    const origin = useOrigin();
     const params= useParams();
     const router = useRouter();
 
@@ -62,8 +60,8 @@ export const BillboardForm: React.FC<BillboardFormProps> = ({initialData}) => {
                 await axios.post(`/api/${params.storeId}/billboards`, data);
             }
 
-            router.refresh();
             router.push(`/${params.storeId}/billboards`);
+            router.refresh();
             toast.success(toastMessage);
         } catch (err) {
           toast.error("Something went wrong")
@@ -76,9 +74,9 @@ export const BillboardForm: React.FC<BillboardFormProps> = ({initialData}) => {
         try {
             setLoading(true);
 
-            await axios.delete(`/api/${params.storeId}/billboards/${params.billboardsId}`);
+            await axios.delete(`/api/${params.storeId}/billboards/${params.billboardId}`);
+            router.push(`/${params.storeId}/billboards`);
             router.refresh();
-            router.push('/');
             toast.success("Billboard successfully deleted")
         } catch (err) {
             toast.error("Make sure you removed all categories using this billboard")
@@ -157,7 +155,6 @@ export const BillboardForm: React.FC<BillboardFormProps> = ({initialData}) => {
                     </Button>
                 </form>
             </Form>
-            <Separator />
         </>
     )
 }
