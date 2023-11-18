@@ -47,7 +47,7 @@ export async function PATCH (
         }
 
         if (!billboardId) {
-            return new NextResponse("Category ID is required", {status: 400});
+            return new NextResponse("Billboard ID is required", {status: 400});
         }
 
         if (!params.categoryId) {
