@@ -7,7 +7,6 @@ This repository contains a program with admin dashboard, which suitable for busi
 ## Navigation through document
 * [Tools which I used](#Tools-which-I-used)
 * [Setup env file](#setup-env-file)
-* [Connect to PlanetScale and Push Prisma](#Connect-to-PlanetScale-and-Push-Prisma)
 * [Start the application](#Start-the-app)
 
 ### Tools which I used
@@ -27,31 +26,7 @@ This repository contains a program with admin dashboard, which suitable for busi
 
 
 ```js
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
-CLERK_SECRET_KEY=
-NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
-NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
-NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
-NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
-
-# This was inserted by `prisma init`:
-# Environment variables declared in this file are automatically made available to Prisma.
-# See the documentation for more detail: https://pris.ly/d/prisma-schema#accessing-environment-variables-from-the-schema
-
-# Prisma supports the native connection string format for PostgreSQL, MySQL, SQLite, SQL Server, MongoDB and CockroachDB.
-# See the documentation for all the connection string options: https://pris.ly/d/connection-strings
-
-DATABASE_URL=''
-NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=""
-STRIPE_API_KEY=
-FRONTEND_STORE_URL=http://localhost:3001
-STRIPE_WEBHOOK_SECRET=
-```
-
-### Connect to PlanetScale and Push Prisma
-```shell
-npx prisma generate
-npx prisma db push
+NEXT_PUBLIC_API_URL=
 ```
 
 
