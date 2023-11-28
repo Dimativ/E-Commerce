@@ -6,7 +6,7 @@ Developed by Dmytro Lytvynenko (с) 2023
 This repository contains a program with admin dashboard, which suitable for business and works also as CMS.
 ## Navigation through document
 * [Tools which I used](#Tools-which-I-used)
-* [Setup env file](#Setup-.env-file)
+* [Setup env file](#setup-env-file)
 * [Connect to PlanetScale and Push Prisma](#Connect-to-PlanetScale-and-Push-Prisma)
 * [Start the application](#Start-the-app)
 
